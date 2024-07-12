@@ -3,6 +3,8 @@
 use dioxus::prelude::*;
 use tracing::Level;
 mod get_ak_data;
+mod model;
+mod params;
 
 #[derive(Clone, Routable, Debug, PartialEq)]
 enum Route {
