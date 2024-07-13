@@ -42,4 +42,8 @@ async fn test_fetch_data() {
     pm.insert("start_date".to_owned(),"20240711".to_owned());
     let result = fetch_data("stock_zh_a_hist", pm).await;
     assert!(result.is_ok());
+    let stocks: Vec<model::stock_zh_model::ZnStocks> = serde_json::from_str(result.unwrap().as_str()).expect("JSON was not well-formatted");
+    for stock in stocks{
+        println!("{:?}",stock);
+    }
 }
