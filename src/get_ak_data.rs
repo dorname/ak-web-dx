@@ -34,8 +34,8 @@ pub async fn fetch_data(api_name: &str, pm: HashMap<String, String>) -> Result<S
 }
 
 
-#[tokio::test]
-async fn test_fetch_data() {
+// #[tokio::test]
+pub async fn test_fetch_data() {
     use crate::model;
     let mut pm = HashMap::<String,String>::new();
     pm.insert("symbol".to_owned(),"600076".to_owned());

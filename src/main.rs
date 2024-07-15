@@ -2,7 +2,7 @@
 
 use dioxus::prelude::*;
 use tracing::Level;
-// mod get_ak_data;
+mod get_ak_data;
 mod model;
 
 #[derive(Clone, Routable, Debug, PartialEq)]
@@ -46,7 +46,7 @@ fn Home() -> Element {
         }
         div {
             h1 { "High-Five counter: {count}" }
-            button { onclick: move |_| count += 1, "Up high!" }
+            button { onclick: move |_| async {  get_ak_data::test_fetch_data().await;}, "Up high!" }
             button { onclick: move |_| count -= 1, "Down low!" }
         }
     }
